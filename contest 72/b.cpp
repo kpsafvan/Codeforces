@@ -11,14 +11,34 @@ int main(){
    	cin>>t;
    	for(i=0;i<t;i++)
    	{
-   		int n,k;
-   		cin>>n>>k;
+   		int n;
+   		cin>>n;
    		int a[n];
    		for(int j=0;j<n;j++){
    			cin>>a[j];
    		}
    		
-   		cout<<a[0]<<"\n";
+   		a[0] = abs(a[0]);
+   		
+   		int gCount =0;
+   		int lCount =0;
+   		
+   		for(int i=1;i<n;i++){
+   			if(a[0] <= abs(a[i]))
+   				gCount++;	
+   			if(-a[0] >= - abs(a[i]))
+   				lCount++;
+   		}
+   		int reduce = n %2 == 0 ? 1 : 0;
+   		if(gCount >= ((n)/2) -reduce)
+   			cout<<"YES"<<"\n";
+   		else if(lCount >= ((n)/2)-reduce)
+   			cout<<"YES\n";
+   		else
+   			cout<<"NO\n";
+   		//cout<<lCount<<" "<<gCount<<"\n";
+   		
+   		//cout<<"\n";
    		
    	}
 }

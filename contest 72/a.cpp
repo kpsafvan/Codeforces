@@ -11,39 +11,18 @@ int main(){
    	cin>>t;
    	for(i=0;i<t;i++)
    	{
-   		int n,k;
-   		cin>>n;
-   		int a[n];
+   		int n,m,p,q;
+   		cin>>n>>m>>p>>q;
+   		// int a[n];
+   		//cout<<(n/p)*q<<" "<<n%p<<"\n";
+   		if((n/p)*q == m && (n/p)*q >= m -q)
+   			cout<<"YES\n";
+   		else
+   			cout<<"NO\n";
+   		// for(int j=0;j<n;j++){
+   			// cin>>a[j];
+//    			
+   		// }
    		
-   		for(int j=0;j<n;j++){
-   			cin>>a[j];
-   			
-   		}
-   		
-   		int oddCount=0,evenCount=0;
-   		for(int j=0;j<n;j++){
-   			if(a[j]%2 ==0){
-   				oddCount++;
-   			}
-   			else{
-   				evenCount++;
-   			}
-   			if(oddCount>0&&evenCount>0){
-   				cout<<"YES"<<"\n";
-   				for(int j=0;j<n;j++){
-	   				if(a[j]%2==0){
-	   					cout<<1<<" ";
-	   				}
-	   				else{
-	   					cout<<2<<" ";
-	   				}
-   				}
-   				cout<<"\n";
-   				break;
-   			}
-   		}
-   		if(oddCount==0||evenCount==0){
-   			cout<<"NO"<<"\n";
-   		}
    	}
 }
