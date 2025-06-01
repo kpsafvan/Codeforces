@@ -15,7 +15,7 @@ int main(){
    		cin>>n>>m>>p>>q;
    		// int a[n];
    		//cout<<(n/p)*q<<" "<<n%p<<"\n";
-   		if((n/p)*q == m && (n/p)*q >= m -q)
+   		if((n/p)*q <= m && (n/p)*q >= m -q)
    			cout<<"YES\n";
    		else
    			cout<<"NO\n";
