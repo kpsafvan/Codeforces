@@ -11,42 +11,28 @@ int main(){
    	cin>>t;
    	for(i=0;i<t;i++)
    	{
-   		int n,m;
-   		cin>>n>>m;
-   		int a[m];
-   		bool asc = true;
-   		for(int j=0;j<m;j++){
+   		int n;
+   		cin>>n;
+   		int a[n];
+   		for(int j=0;j<n;j++){
    			cin>>a[j];
    		}
-   		for(int j=0;j<m;j++){
-   			if(j!=0){
-   				if((a[j] - 1) != a[j - 1]){
-   					asc = false;
-   					break;
+   		
+   		sort(a,a+n);
+   		bool flag = true;
+   		for(int j=0;j<n;j++){
+   			if( (j%2) != 0 && j < (n-1) ){
+   				if(a[j] != a[j + 1]){
+   					flag = false;
    				}
    			}
    		}
-   		int count = 0;
-   		//three cases, if there is more than one cycle, answer is one done
-   		//length is one
-   		//length more than one
-   		//sub cases starting with one and starting with n
-
-   		if(asc == false){
-   			cout<<"1"<<"\n";
+   		if(flag == true){
+   			cout<<"YES";
    		}
    		else{
-	   		if(m == 1){
-				count = n - a[0] + 1;
-   			}
-   			else if(m > 1){
-   				count = n - m + 1;
-   				if(a[0] > 1){
-   					count -= a[0] - 1;
-   				}
-   			}
-   			cout<<count<<"\n";
+   			cout<<"NO";
    		}
-   		
+   		cout<<"\n";
    	}
 }
