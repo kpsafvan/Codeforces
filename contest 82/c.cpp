@@ -81,7 +81,6 @@ int main(){
 	   					if(!(j-even %2 ==0) ){
 	   						val += o[0];	
 	   					}	
-	   					
 	   				}
 	   				cout<<val<<" ";
 	   			}
